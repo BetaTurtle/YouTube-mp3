@@ -1,9 +1,9 @@
 package in.betaturtle.youtubemp3;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,19 +14,22 @@ import android.widget.Toast;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
-import com.koushikdutta.ion.ProgressCallback;
 
 import java.io.File;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    private android.support.v7.widget.Toolbar toolbar;
     Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context=this;
         setContentView(R.layout.activity_main);
+        toolbar=(android.support.v7.widget.Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
         File folder = new File(Environment.getExternalStorageDirectory() + "/YoutubeMp3");
         if (!folder.exists()) {
             folder.mkdir();
@@ -71,6 +74,11 @@ public class MainActivity extends ActionBarActivity {
                                 });
                     }
                 });
+    }
+
+    public void webview(View v2)
+    {
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,30 +1,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include android:id="@+id/app_bar"
+        layout="@layout/app_bar"/>
 
     <EditText
+        android:layout_below="@+id/app_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
         android:text="https://www.youtube.com/watch?v=HnLtNrvfZTU"
         android:hint="Paste the complete youtube url here"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true" />
 
     <Button
+        android:layout_below="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Download mp3"
         android:onClick="download"
         android:id="@+id/button"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="45dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_below="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search YouTube"
+        android:onClick="webview"
+        android:id="@+id/search_button"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
